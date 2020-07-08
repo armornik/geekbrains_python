@@ -1,3 +1,4 @@
+# Задача 6
 first_result: int = 0
 required_result: int = 0
 while True:

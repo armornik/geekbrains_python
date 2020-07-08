@@ -1,3 +1,4 @@
+# Задача 2
 second_from_user: int = int(input('Введите количество секунд: '))
 hours: int = second_from_user // 3600
 minutes: int = (second_from_user - hours * 3600) // 60
