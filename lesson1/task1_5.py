@@ -1,3 +1,4 @@
+# Задача 5
 revenue: int = int(input('Введите выручку: '))
 cost: int = int(input('Введите издержку: '))
 if revenue - cost < 0:

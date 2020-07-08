@@ -1,3 +1,4 @@
+# Задача 4
 int_from_user: str = input('Введите число: ')
 int_max = ''
 for digit in int_from_user:
