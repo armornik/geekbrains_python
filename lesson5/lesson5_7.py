@@ -19,8 +19,7 @@ try:
     print(average_profit)
     data_for_file = [company_info, average_profit]
     with open("my_file.json", "w") as write_f:
-        json.dump(data_for_file, write_f, ensure_ascii=False)
-        # json.dump(average_profit, write_f)
+        json.dump(data_for_file, write_f, ensure_ascii=False, indent=1)
 except IOError:
     print('Ошибка ввода-вывода')
 
