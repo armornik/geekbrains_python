@@ -22,4 +22,3 @@ try:
         json.dump(data_for_file, write_f, ensure_ascii=False, indent=1)
 except IOError:
     print('Ошибка ввода-вывода')
-
