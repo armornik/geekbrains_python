@@ -28,3 +28,25 @@
 Вы вместо трехзначного числа ввели строку (((. Исправьтесь
 Введите операцию (+, -, *, / или 0 для выхода):
 """
+
+
+def calculator():
+    sign = input('Введите операцию(+, -, *, / или 0 для выхода): ')
+    if sign == '0':
+        print('До следующей встречи')
+        return
+    elif sign not in ('+', '-', '*', '/'):
+        print('Вы ввели не знак, и не 0')
+        return calculator()
+    else:
+        try:
+            first_number = float(input('Введите первое число:'))
+            second_number = float(input('Введите второе число:'))
+            print(eval(f'{first_number}{sign}{second_number}'))
+            calculator()
+        except ValueError:
+            print('Вы вместо числа ввели строку (((. Исправьтесь')
+            return calculator()
+
+
+calculator()
