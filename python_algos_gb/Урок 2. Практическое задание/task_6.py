@@ -9,3 +9,28 @@
 Для оценки Отлично в этом блоке необходимо выполнить 5 заданий из 7
 Для оценки Отлично в этом блоке необходимо выполнить 5 заданий из 7
 """
+from random import randint
+
+number = randint(0, 100)
+
+
+def number_guess(number, check=0):
+    if check != 10:
+        try:
+            number_user = int(input('Введите число, которое требуется перевернуть: '))
+            check += 1
+            if number == number_user:
+                print(f'Вы угадали число за {check} раз')
+            elif check < 10:
+                lower = 'больше' if number < number_user else 'меньше'
+                print(f'Ваше число {lower} заданного')
+                return number_guess(number, check)
+            else:
+                print(f'Вы не угадали загаданное число {number} за 10 попыток')
+                return
+        except ValueError:
+            print('Вы вместо числа ввели строку (((. Исправьтесь')
+            return number_guess(number, check)
+
+
+number_guess(number)
