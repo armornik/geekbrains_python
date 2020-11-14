@@ -13,6 +13,7 @@
 Опишите результаты, сделайте выводы, где и какой алгоритм эффективнее
 Подумайте и по возможности определите сложность каждого алгоритма
 """
+from timeit import timeit
 
 
 def simple(i):
@@ -35,5 +36,14 @@ def simple(i):
     return n
 
 
+def simple_2(i):
+    prime_numbers = [x for x in range(2, i * 10) if all(x % y != 0 for y in range(2, x))]
+    return prime_numbers[i-1]
+
 i = int(input('Введите порядковый номер искомого простого числа: '))
+
+print(simple_2(i))
 print(simple(i))
+print('First function time: ', timeit("simple(i)", setup="from __main__ import simple, i", number=10000))
+print('Second function time: ', timeit("simple_2(i)", setup="from __main__ import simple_2, i", number=10000))
+
