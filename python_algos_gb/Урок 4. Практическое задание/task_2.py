@@ -79,3 +79,30 @@ print(
         'recursive_reverse_mem(num_10000)',
         setup='from __main__ import recursive_reverse_mem, num_10000',
         number=10000))
+
+
+def recursive_reverse2(number):
+    number = str(number)
+    return number[::-1]
+
+
+print('Не оптимизированная функция recursive_reverse2')
+print(
+    timeit(
+        "recursive_reverse2(num_100)",
+        setup='from __main__ import recursive_reverse2, num_100',
+        number=10000))
+print(
+    timeit(
+        "recursive_reverse2(num_1000)",
+        setup='from __main__ import recursive_reverse2, num_1000',
+        number=10000))
+print(
+    timeit(
+        "recursive_reverse2(num_10000)",
+        setup='from __main__ import recursive_reverse2, num_10000',
+        number=10000))
+
+# При решении задач с помощью рекурсии - мемоизация значительно ускоряет процесс при повторных вычислениях.
+# Так же предложен второй вариант решения задачи, с более быстрым алгоритмом. (P.S. оказывается он есть в 3 задаче,
+# возможно не то предлагаю...
